@@ -2,9 +2,12 @@
 
 require "json"
 require 'github_api'
+require 'yaml'
 
 # You can create a toke on https://github.com/settings/applications 'Generate new token'
-token = '4d21509870a2ec41f96e4f085b71739192221a92'
+# token = '4d21509870a2ec41f96e4f085b71739192221a92'
+config = YAML.load_file 'config/application.yml'
+token = config["oauth_token"]
 
 github = Github.new :oauth_token => token, auto_pagination: true
 
