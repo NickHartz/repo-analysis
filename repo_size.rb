@@ -4,8 +4,7 @@ require "json"
 require 'github_api'
 require 'yaml'
 
-# You can create a toke on https://github.com/settings/applications 'Generate new token'
-# token = '4d21509870a2ec41f96e4f085b71739192221a92'
+# You can create a token on https://github.com/settings/applications 'Generate new token'
 config = YAML.load_file 'config/application.yml'
 token = config["oauth_token"]
 
