@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require "json"
 require 'github_api'
 require 'yaml'
 
@@ -9,10 +8,6 @@ config = YAML.load_file 'config/application.yml'
 token = config["oauth_token"]
 
 github = Github.new :oauth_token => token, auto_pagination: true
-
-github.orgs.list[0]["login"]
-
-github.repos.list( org: 'Mincom' ).count
 
 github.orgs.list.each do |org|
   # print "#{org['login']} \n"
